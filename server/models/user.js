@@ -64,12 +64,12 @@ UserSchema.statics.findByCredentials = function (email, password) {
 		}
 
 		return new Promise((resolve, reject) => {
-			bcrypt.compare(password, user.password, (err) => {
-				if (err) {
-					return reject(err);
-				} 
-
-				resolve(user);
+			bcrypt.compare(password, user.password, (err, res) => {
+				if (res) {
+					return resolve(user);
+				} else {
+					reject();
+				}
 			});
 		});
 	})
