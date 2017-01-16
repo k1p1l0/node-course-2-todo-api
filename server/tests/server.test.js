@@ -280,6 +280,6 @@ describe('POST /users/login', () => {
  				password: 'invald'
  			})
  			.expect(400)
- 			.end(done);
+ 			.end(done); 
 	});
 })
