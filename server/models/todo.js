@@ -14,6 +14,10 @@ let Todo = moongoose.model('Todo', {
 	completedAt: {
 		type: Number,
 		default: null
+	},
+	_author: {
+		type: moongoose.Schema.Types.ObjectId,
+		required: true,
 	}
 });
 
